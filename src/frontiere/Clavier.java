@@ -40,4 +40,9 @@ public class Clavier {
 		return chiffre;
 	}
 
+	public static String entrerString(String question) {
+		String mot = scan.next();
+		return mot;
+	}
+
 }
