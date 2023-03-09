@@ -41,6 +41,7 @@ public class Clavier {
 	}
 
 	public static String entrerString(String question) {
+		System.out.println(question);
 		String mot = scan.next();
 		return mot;
 	}
