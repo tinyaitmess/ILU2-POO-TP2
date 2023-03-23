@@ -26,6 +26,18 @@ public class BoundaryAcheterProduit {
 		String produit = scan.nextLine();
 		System.out.println("Chez quel commecant voulez-vous acheter des fleurs ?");
 		String[] vendeurs =controlAcheterProduit.trouverVendeurs(produit);
-		afficherVendeurs(vendeurs);
+		if(vendeurs.length<1)
+			System.out.println("Desole personne ne vend ce produit a marche");
+		else {
+			afficherVendeurs(vendeurs);
+			int choixVendeur = Clavier.entrerEntier(null);
+			if (choixVendeur<1 | vendeurs.length<choixVendeur ) {
+				System.out.println("Ce numero n'est pas disponible ");
+			}else {
+				System.out.println(nomAcheteur+" se déplace jusqu'a l'etal du vendeur "+vendeurs[choixVendeur-1]+"\n Bonjour "+nomAcheteur);
+				int nbProduit = Clavier.entrerEntier("Combien de fleurs voulez vous acheter ?");
+
+			}
+		}
 	}
 }
