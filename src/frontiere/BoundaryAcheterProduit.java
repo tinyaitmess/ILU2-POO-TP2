@@ -36,7 +36,7 @@ public class BoundaryAcheterProduit {
 			}else {
 				System.out.println(nomAcheteur+" se déplace jusqu'a l'etal du vendeur "+vendeurs[choixVendeur-1]+"\n Bonjour "+nomAcheteur);
 				int nbProduit = Clavier.entrerEntier("Combien de fleurs voulez vous acheter ?");
-
+				controlAcheterProduit.verifierSuffisanceProduit(nomAcheteur, nbProduit, vendeurs[choixVendeur-1]);
 			}
 		}
 	}

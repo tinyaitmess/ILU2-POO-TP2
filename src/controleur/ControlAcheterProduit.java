@@ -1,6 +1,7 @@
 package controleur;
 
 import personnages.Gaulois;
+import villagegaulois.Etal;
 import villagegaulois.Village;
 
 public class ControlAcheterProduit {
@@ -29,6 +30,24 @@ public class ControlAcheterProduit {
 		}
 		return nomVendeurs;
 	}
+	
+	public void verifierSuffisanceProduit (String nomAcheteur,int nbProduit,String nomVendeur)
+	{
+		Etal etal = controlTrouverEtalVendeur.trouverEtalVendeur(nomVendeur);
+		int nbVendre=etal.getQuantite();
+		if (nbVendre==0)
+			System.out.println(nomAcheteur+" veut acheter"+nbProduit+etal.getProduit()+" malheureusement il ny en a plus");
+		else if (nbVendre-nbProduit<0)
+			{
+			System.out.println(nomAcheteur+" veut acheter"+nbProduit+etal.getProduit()+ "malheureusement "+nomVendeur+ "n'en a que "+etal.getQuantite());
+			etal.acheterProduit(nbVendre);
+			}else {
+			System.out.println(nomAcheteur+" achete"+nbProduit+etal.getProduit());
+			etal.acheterProduit(nbProduit);
+		}
+	}
+	
+	
 	
 	
 }
