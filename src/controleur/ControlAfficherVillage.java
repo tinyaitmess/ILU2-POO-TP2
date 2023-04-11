@@ -20,4 +20,10 @@ public class ControlAfficherVillage {
 	public int donnerNbEtals() {
 		return village.donnerNbEtal();
 	}
+	
+	public static void main(String[] args) {
+		Village village= new Village("Le village des irreductibles",10,5);
+		
+	}
 }
+
